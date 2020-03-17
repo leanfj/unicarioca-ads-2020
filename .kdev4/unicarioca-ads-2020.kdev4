@@ -1,0 +1,14 @@
+[Buildset]
+BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x01\x00\x00\x00&\x00u\x00n\x00i\x00c\x00a\x00r\x00i\x00o\x00c\x00a\x00-\x00a\x00d\x00s\x00-\x002\x000\x002\x000)
+
+[Launch]
+Launch Configurations=Launch Configuration 0
+
+[Launch][Launch Configuration 0]
+Configured Launch Modes=execute
+Configured Launchers=scriptAppLauncher
+Name=Novo lançador Aplicação de programa
+Type=Script Application
+
+[Project]
+VersionControlSupport=kdevgit
