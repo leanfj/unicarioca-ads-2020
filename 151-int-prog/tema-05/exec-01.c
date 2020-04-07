@@ -19,9 +19,11 @@ int main() {
   scanf("%f", &altura);
       
   switch(sexo) {
+    case 'm': // Utilizando o fato do break não ter sido chamado
     case 'M':
       printf(" Sendo homen seu peso ideal é: %.2f ", (72.7 * altura) - 58);
       break;
+    case 'f': // Utilizando o fato do break não ter sido chamado
     case 'F':
       printf(" Sendo mulher, seu peso ideal é: %.2f ", (62.1 * altura) - 44.7);
       break;
