@@ -12,7 +12,7 @@ int main() {
   char sexo;
   float altura;
 
-  printf("Informe seu sexo M para masculino e F para feminino: \n");
+  printf("Informe seu sexo M para masculino e F para feminino: ");
   scanf("%c", &sexo);
 
   printf("Informe sua altura \n");
