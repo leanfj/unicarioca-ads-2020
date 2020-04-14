@@ -27,7 +27,6 @@ int main() {
       printf("Reprovado!!! \n");
     }
   }
-
   printf("Total de alunos: %d \n", quant_alunos);
   printf("Média da nota da turma: %.1f \n", media_turma / quant_alunos);
 
