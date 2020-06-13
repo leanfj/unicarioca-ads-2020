@@ -18,9 +18,19 @@ void lista (int valor_inicial, int valor_final, int incremento, char ordem[12]) 
 }
 
 int main() {
-  lista(1, 10, 1, "crescente");
-  lista(1, 10, 2, "decrescente");
-  
+  int valorInicial, valorFinal, valorIncremento;
+  char ordemExibicao[12];
+
+  printf("Informe o valor inicial \n");
+  scanf("%d", &valorInicial);
+  printf("Informe o valor final \n");
+  scanf("%d", &valorFinal);
+  printf("Informe o valor de incremento ou decremento \n");
+  scanf("%d", &valorIncremento);
+  printf("Informe a ordem de exibição \n");
+  scanf("%s", &ordemExibicao);
+
+  lista(valorInicial, valorFinal, valorIncremento, ordemExibicao);
 
   return 0;
 }
