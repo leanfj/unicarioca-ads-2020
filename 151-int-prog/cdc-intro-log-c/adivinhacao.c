@@ -6,7 +6,7 @@ int main() {
   printf("**********************************\n");
 
   int numeroSecreto;
-  int chute;
+  int tentativa;
 
   numeroSecreto = 42;
 
@@ -14,10 +14,10 @@ int main() {
 
   printf("O %d é o numero secreto \n", numeroSecreto);
 
-  printf("De seu chute! \n");
+  printf("De seu tentativa! \n");
 
-  scanf("%d", &chute);
+  scanf("%d", &tentativa);
 
-  printf("Seu chute é %d \n", chute);
+  printf("Seu tentativa é %d \n", tentativa);
 
 }
