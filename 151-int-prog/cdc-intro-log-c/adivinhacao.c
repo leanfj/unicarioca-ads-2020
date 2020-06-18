@@ -15,12 +15,20 @@ int main() {
   scanf("%d", &tentativa);
 
   printf("Seu tentativa é %d \n", tentativa);
+  
+  int acertou = tentativa == numeroSecreto;
 
-  if (tentativa == numeroSecreto) {
+
+  if (acertou) {
     printf("Você acertou, parabêns \n");
     printf("Você é um bom jogador! Tente novamente. \n");
   } else {
-    printf("Você errou!!! \n");
-    printf("Não desanime!! Volte e tente novamente. \n");
+    int maior = tentativa > numeroSecreto;
+
+    if(maior) {
+      printf("Sua tentativa foi maior que o numero secreto \n");
+    } else {
+      printf("Sua tentativa foi menor que o numero secreto \n");
+    }
   }
 }
