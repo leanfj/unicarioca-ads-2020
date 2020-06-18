@@ -10,14 +10,17 @@ int main() {
 
   numeroSecreto = 42;
 
-  printf("%d \n", numeroSecreto);
-
-  printf("O %d é o numero secreto \n", numeroSecreto);
-
-  printf("De seu tentativa! \n");
+  printf("Qual é seu chute \n");
 
   scanf("%d", &tentativa);
 
   printf("Seu tentativa é %d \n", tentativa);
 
+  if (tentativa == numeroSecreto) {
+    printf("Você acertou, parabêns \n");
+    printf("Você é um bom jogador! Tente novamente. \n");
+  } else {
+    printf("Você errou!!! \n");
+    printf("Não desanime!! Volte e tente novamente. \n");
+  }
 }
