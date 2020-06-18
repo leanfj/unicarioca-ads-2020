@@ -15,17 +15,18 @@ int main() {
   scanf("%d", &tentativa);
 
   printf("Seu tentativa é %d \n", tentativa);
-  
+
   int acertou = tentativa == numeroSecreto;
-
-
+  /*printf("Maior %d", maior);
+   *Uso da variável fora do escopo, não ai funcionar!!!
+   * */
   if (acertou) {
     printf("Você acertou, parabêns \n");
     printf("Você é um bom jogador! Tente novamente. \n");
   } else {
     int maior = tentativa > numeroSecreto;
 
-    if(maior) {
+    if (maior) {
       printf("Sua tentativa foi maior que o numero secreto \n");
     } else {
       printf("Sua tentativa foi menor que o numero secreto \n");
