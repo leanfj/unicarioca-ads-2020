@@ -9,27 +9,29 @@ int main() {
   int tentativa;
 
   numeroSecreto = 42;
+  for (int i = 1; i <= 3; i++) {
 
-  printf("Qual é seu chute \n");
+    printf("Qual é seu chute \n");
+    scanf("%d", &tentativa);
 
-  scanf("%d", &tentativa);
+    printf("Seu tentativa numero %d é %d \n",i , tentativa);
 
-  printf("Seu tentativa é %d \n", tentativa);
-
-  int acertou = tentativa == numeroSecreto;
-  /*printf("Maior %d", maior);
-   *Uso da variável fora do escopo, não ai funcionar!!!
-   * */
-  if (acertou) {
-    printf("Você acertou, parabêns \n");
-    printf("Você é um bom jogador! Tente novamente. \n");
-  } else {
-    int maior = tentativa > numeroSecreto;
-
-    if (maior) {
-      printf("Sua tentativa foi maior que o numero secreto \n");
+    int acertou = tentativa == numeroSecreto;
+    /*printf("Maior %d", maior);
+     *Uso da variável fora do escopo, não ai funcionar!!!
+     * */
+    if (acertou) {
+      printf("Você acertou, parabêns \n");
+      printf("Você é um bom jogador! Tente novamente. \n");
     } else {
-      printf("Sua tentativa foi menor que o numero secreto \n");
+      int maior = tentativa > numeroSecreto;
+
+      if (maior) {
+        printf("Sua tentativa foi maior que o numero secreto \n");
+      } else {
+        printf("Sua tentativa foi menor que o numero secreto \n");
+      }
     }
   }
+  printf("Fim de jogo \n");
 }
