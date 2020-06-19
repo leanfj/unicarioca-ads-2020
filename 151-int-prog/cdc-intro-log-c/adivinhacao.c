@@ -23,6 +23,7 @@ int main() {
     if (acertou) {
       printf("Você acertou, parabêns \n");
       printf("Você é um bom jogador! Tente novamente. \n");
+      break;
     } else {
       int maior = tentativa > numeroSecreto;
 
