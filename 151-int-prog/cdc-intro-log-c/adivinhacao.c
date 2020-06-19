@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define NUMERO_TENTATIVAS 3
 
 int main() {
   printf("**********************************\n");
@@ -9,14 +10,20 @@ int main() {
   int tentativa;
 
   numeroSecreto = 42;
-  for (int i = 1; i <= 3; i++) {
+  for (int i = 1; i <= NUMERO_TENTATIVAS; i++) {
 
     printf("Qual é seu chute \n");
     scanf("%d", &tentativa);
 
-    printf("Seu tentativa numero %d é %d \n",i , tentativa);
+    printf("Seu tentativa numero %d é %d \n", i, tentativa);
 
+    if (tentativa < 0) {
+      printf("Informe um número maior que 0 \n");
+      i--;
+      continue;
+    }
     int acertou = tentativa == numeroSecreto;
+    int maior = tentativa > numeroSecreto;
     /*printf("Maior %d", maior);
      *Uso da variável fora do escopo, não ai funcionar!!!
      * */
@@ -24,14 +31,10 @@ int main() {
       printf("Você acertou, parabêns \n");
       printf("Você é um bom jogador! Tente novamente. \n");
       break;
+    } else if (maior) {
+      printf("Sua tentativa foi maior que o numero secreto \n");
     } else {
-      int maior = tentativa > numeroSecreto;
-
-      if (maior) {
-        printf("Sua tentativa foi maior que o numero secreto \n");
-      } else {
-        printf("Sua tentativa foi menor que o numero secreto \n");
-      }
+      printf("Sua tentativa foi menor que o numero secreto \n");
     }
   }
   printf("Fim de jogo \n");
