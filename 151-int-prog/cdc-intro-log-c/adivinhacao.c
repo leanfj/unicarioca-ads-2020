@@ -8,20 +8,21 @@ int main() {
 
   int numeroSecreto;
   int tentativa;
+  int ganhou = 0;
+  int tentativas = 1;
 
   numeroSecreto = 42;
-  for (int i = 1; i <= NUMERO_TENTATIVAS; i++) {
 
-    printf("Qual é seu chute \n");
+  while (!ganhou) {
+    printf("Qual é o seu %d, chute? \n", tentativas);
     scanf("%d", &tentativa);
 
-    printf("Seu tentativa numero %d é %d \n", i, tentativa);
-
     if (tentativa < 0) {
-      printf("Informe um número maior que 0 \n");
-      i--;
+      printf("Você não pode usar números negativos. \n");
       continue;
     }
+
+    printf("Seu %d chute foi %d \n", tentativas, tentativa);
     int acertou = tentativa == numeroSecreto;
     int maior = tentativa > numeroSecreto;
     /*printf("Maior %d", maior);
@@ -30,12 +31,13 @@ int main() {
     if (acertou) {
       printf("Você acertou, parabêns \n");
       printf("Você é um bom jogador! Tente novamente. \n");
-      break;
+      ganhou = 1;
     } else if (maior) {
       printf("Sua tentativa foi maior que o numero secreto \n");
     } else {
       printf("Sua tentativa foi menor que o numero secreto \n");
     }
+    tentativas++;
   }
   printf("Fim de jogo \n");
 }
