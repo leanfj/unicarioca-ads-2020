@@ -31,7 +31,7 @@ int main() {
      * */
     if (acertou) {
       printf("Você acertou, parabêns \n");
-      printf("Você é um bom jogador!\n \n");
+      printf("Você é um bom jogador! \n \n");
       ganhou = 1;
     } else if (maior) {
       printf("Sua tentativa foi maior que o numero secreto \n");
