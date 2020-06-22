@@ -10,7 +10,7 @@ int main() {
   int tentativa;
   int ganhou = 0;
   int tentativas = 1;
-  int ponto = 1000;
+  double ponto = 1000;
 
   numeroSecreto = 42;
 
@@ -39,11 +39,10 @@ int main() {
       printf("Sua tentativa foi menor que o numero secreto \n");
     }
     tentativas++;
-    int ponto_perdidos = (tentativa - numeroSecreto) / 2;
+    double ponto_perdidos = (tentativa - numeroSecreto) / 2.0;
     ponto = ponto - ponto_perdidos;
-
   }
-  printf("Você fez %d pontos \n", ponto);
+  printf("Você fez %.2f pontos \n", ponto);
   printf("Obrigado por jogar \n \n");
   printf("Fim de jogo \n");
 }
