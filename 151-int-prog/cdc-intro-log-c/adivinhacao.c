@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define NUMERO_TENTATIVAS 3
 
 int main() {
@@ -39,7 +40,7 @@ int main() {
       printf("Sua tentativa foi menor que o numero secreto \n");
     }
     tentativas++;
-    double ponto_perdidos = (double)(tentativa - numeroSecreto) / (double)2;
+    double ponto_perdidos = (double)abs(tentativa - numeroSecreto) / (double)2;
     ponto = ponto - ponto_perdidos;
   }
   printf("Você fez %.2f pontos \n", ponto);
