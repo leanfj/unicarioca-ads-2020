@@ -39,7 +39,7 @@ int main() {
       printf("Sua tentativa foi menor que o numero secreto \n");
     }
     tentativas++;
-    double ponto_perdidos = (tentativa - numeroSecreto) / 2.0;
+    double ponto_perdidos = (double)(tentativa - numeroSecreto) / (double)2;
     ponto = ponto - ponto_perdidos;
   }
   printf("Você fez %.2f pontos \n", ponto);
