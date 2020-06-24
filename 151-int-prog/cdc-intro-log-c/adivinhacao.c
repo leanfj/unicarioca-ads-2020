@@ -15,6 +15,8 @@ int main() {
 
   int nivel;
   int totaldetentativas;
+  int menornumero;
+  int maiornumero;
   int numeroSecreto;
   int tentativa;
   int ganhou = 0;
@@ -24,9 +26,15 @@ int main() {
   srand(segundos);
 
   int n1 = rand();
+  
+  printf("Escolha o limite de busca \n");
+  printf("Escolha o menor numero \n");
+  scanf("%d", &menornumero);
+  printf("Escolha o maior numero \n");
+  scanf("%d", &maiornumero);
 
-  numeroSecreto = n1 % 100;
-
+  numeroSecreto = n1 % (maiornumero - menornumero + 1) + menornumero;
+  printf("%d", numeroSecreto);
   printf("Qual o nível de dificuldade ? \n");
   printf("(1)Fácil (2)Médio (3)Difícil \n \n");
   printf("Escolha: ");
