@@ -27,14 +27,18 @@ int main() {
 
   scanf("%d", &nivel);
 
-  if (nivel == 1) {
-    totaldetentativas = 20;
-  } else if (nivel == 2) {
-    totaldetentativas = 15;
-  } else {
-    totaldetentativas = 6;
+  switch (nivel) {
+    case 1:
+      totaldetentativas = 20;
+      break;
+    case 2:
+      totaldetentativas = 12;
+      break;
+    default:
+      totaldetentativas = 6;
+      break;
   }
-
+  
   for (int i = 1; i <= totaldetentativas; i++) {
     printf("Tentativa %d de %d \n", i, totaldetentativas);
 
