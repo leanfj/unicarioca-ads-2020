@@ -16,23 +16,22 @@ int main() {
     chutes[tentativas] = chute;
     tentativas++;
 
-    /*Verifica em cada posicao do array se o chute é igual a letra da posição e
-     * imprime na tela*/
+    /*Loop para cada posição da palavra secreta*/
     for (int i = 0; i < strlen(palavraSecreta); i++) {
       int achou = 0;
-
+      /*Verifica cada tentativa e compara com cada letra da palavra secreta*/
       for (int j = 0; j < tentativas; j++) {
         if (chutes[j] == palavraSecreta[i]) {
           achou = 1;
           break;
         }
-
       }
-        if (achou) {
-          printf("%c ", palavraSecreta[i]);
-        } else {
-          printf("_ ");
-        }
+      /*Para cada letra da palavra secreta, imprime a letra se achou for 1*/
+      if (achou) {
+        printf("%c ", palavraSecreta[i]);
+      } else {
+        printf("_ ");
+      }
     }
 
     printf("\n");
