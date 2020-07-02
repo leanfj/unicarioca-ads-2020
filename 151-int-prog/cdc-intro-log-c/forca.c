@@ -1,12 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
+void abertura() {
+  printf("*******************\n");
+  printf("***Jogo Da Forca***\n");
+  printf("*******************\n");
+}
+
 int main() {
   char palavraSecreta[20];
   int acertou = 0, enforcado = 0;
   char chutes[26];
   int tentativas = 0;
   sprintf(palavraSecreta, "MELANCIA");
+
+  abertura();
 
   do {
     char chute;
