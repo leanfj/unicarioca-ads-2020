@@ -7,6 +7,14 @@ void abertura() {
   printf("*******************\n");
 }
 
+void chuta(char chutes[], int* tentativas) {
+  char chute;
+  printf("Qual letra? \n");
+  scanf(" %c", &chute);
+  chutes[*tentativas] = chute;
+  (*tentativas)++;
+}
+
 int main() {
   char palavraSecreta[20];
   int acertou = 0, enforcado = 0;
@@ -17,13 +25,7 @@ int main() {
   abertura();
 
   do {
-    char chute;
-
-    printf("Qual letra? \n");
-    scanf(" %c", &chute);
-    chutes[tentativas] = chute;
-    tentativas++;
-
+    printf("Você já deu %d chutes \n", tentativas);
     /*Loop para cada posição da palavra secreta*/
     for (int i = 0; i < strlen(palavraSecreta); i++) {
       int achou = 0;
@@ -43,6 +45,7 @@ int main() {
     }
 
     printf("\n");
+    chuta(chutes, &tentativas);
   } while (!acertou && !enforcado);
 
   return 0;
