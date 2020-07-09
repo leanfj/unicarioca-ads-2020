@@ -7,12 +7,23 @@ void abertura() {
   printf("*******************\n");
 }
 
-void chuta(char chutes[], int* tentativas) {
+void chuta(char chutes[], int *tentativas) {
   char chute;
   printf("Qual letra? \n");
   scanf(" %c", &chute);
   chutes[*tentativas] = chute;
   (*tentativas)++;
+}
+int jachutou(char letra, char *chutes, int tentativas) {
+  int achou = 0;
+  for (int j = 0; j < tentativas; j++) {
+    if (chutes[j] == letra) {
+      achou = 1;
+      /*Para a axecução do loop*/
+      break;
+    }
+  }
+  return achou;
 }
 
 int main() {
@@ -28,16 +39,8 @@ int main() {
     printf("Você já deu %d chutes \n", tentativas);
     /*Loop para cada posição da palavra secreta*/
     for (int i = 0; i < strlen(palavraSecreta); i++) {
-      int achou = 0;
-      /*Verifica cada tentativa e compara com cada letra da palavra secreta*/
-      for (int j = 0; j < tentativas; j++) {
-        if (chutes[j] == palavraSecreta[i]) {
-          achou = 1;
-          break;
-        }
-      }
       /*Para cada letra da palavra secreta, imprime a letra se achou for 1*/
-      if (achou) {
+      if (jachutou(palavraSecreta[i], chutes, tentativas)) {
         printf("%c ", palavraSecreta[i]);
       } else {
         printf("_ ");
