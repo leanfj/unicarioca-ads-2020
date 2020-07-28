@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "forca.h"
 
 char palavraSecreta[20];
 char chutes[26];
