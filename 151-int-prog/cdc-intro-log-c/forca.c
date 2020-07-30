@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 char palavraSecreta[20];
 char chutes[26];
@@ -27,17 +28,22 @@ void escolhepalavra() {
 
   fscanf(f, "%d", &quantidade_palavras);
   
-  char palavra_1[50];
-  fscanf(f, "%s", palavra_1);
+  /*char palavra_1[50];*/
+  /*fscanf(f, "%s", palavra_1);*/
 
-  char palavra_2[50];
-  fscanf(f, "%s", palavra_2);
+  /*char palavra_2[50];*/
+  /*fscanf(f, "%s", palavra_2);*/
 
-  char palavra_3[50];
-  fscanf(f, "%s", palavra_3);
+  /*char palavra_3[50];*/
+  /*fscanf(f, "%s", palavra_3);*/
+  srand(time(0));
 
-  printf("%s, %s, %s", palavra_1, palavra_2, palavra_3);
+  int randomico = rand() % quantidade_palavras;
 
+  for (int i = 0; i <= randomico; i++) {
+    fscanf(f, "%s", palavraSecreta);
+  }
+  fclose(f);
 }
 
 void chuta() {
