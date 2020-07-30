@@ -1,6 +1,7 @@
+#include "forca.h"
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "forca.h"
 
 char palavraSecreta[20];
 char chutes[26];
@@ -12,7 +13,32 @@ void abertura() {
   printf("*******************\n");
 }
 
-void escolhepalavra() { sprintf(palavraSecreta, "MELANCIA"); }
+/*void escolhepalavra() { sprintf(palavraSecreta, "MELANCIA"); }*/
+void escolhepalavra() {
+  FILE* f;
+
+  f = fopen("palavras.txt", "r");
+  if (f == 0 ) {
+    printf("Banco de dado de palavras não está disponível \n\n");
+    exit(1);
+  }
+
+  int quantidade_palavras;
+
+  fscanf(f, "%d", &quantidade_palavras);
+  
+  char palavra_1[50];
+  fscanf(f, "%s", palavra_1);
+
+  char palavra_2[50];
+  fscanf(f, "%s", palavra_2);
+
+  char palavra_3[50];
+  fscanf(f, "%s", palavra_3);
+
+  printf("%s, %s, %s", palavra_1, palavra_2, palavra_3);
+
+}
 
 void chuta() {
   char chute;
@@ -34,14 +60,13 @@ int jachutou(char letra) {
 }
 
 int ganhou() {
-  for(int i = 0; i < strlen(palavraSecreta); i++) {
+  for (int i = 0; i < strlen(palavraSecreta); i++) {
     if (!jachutou(palavraSecreta[i])) {
       return 0;
     }
   }
 
   return 1;
-
 }
 
 void desenharforca() {
