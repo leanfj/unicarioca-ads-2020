@@ -116,14 +116,22 @@ void adcionapalavra() {
 
     FILE* f;
 
-    f = fopen("palavras.txt", "a");
+    f = fopen("palavras.txt", "r+");
 
     if(f == 0) {
       printf("Banco de dados de palavras não está disponível \n\n");
       exit(1);
     }
+    
+    int qtd;
 
-    fprintf(f, "%s", novapalavra);
+    fscanf(f, "%d", &qtd);
+    qtd++;
+    fseek(f, 0, SEEK_SET);
+    fprintf(f, "%d", qtd);
+    
+    fseek(f, 0, SEEK_END);
+    fprintf(f, "\n%s", novapalavra);
 
     fclose(f);
 
