@@ -16,7 +16,7 @@ void abertura() {
 
 /*void escolhepalavra() { sprintf(palavrasecreta, "melancia"); }*/
 void escolhepalavra() {
-  file* f;
+  FILE* f;
 
   f = fopen("palavras.txt", "r");
   if (f == 0 ) {
@@ -58,7 +58,7 @@ int jachutou(char letra) {
 }
 
 int ganhou() {
-  for (int i = 0; i < strlen(palavrasecreta); i++) {
+  for (int i = 0;  i < strlen(palavrasecreta); i++) {
     if (!jachutou(palavrasecreta[i])) {
       return 0;
     }
@@ -154,6 +154,7 @@ int main() {
     chutesdados++;
 
   } while (!ganhou() && !enforcou());
-
+  desenharforca();
+  adcionapalavra();
   return 0;
 }
