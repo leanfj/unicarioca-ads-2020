@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 
-char palavrasecreta[20];
+char palavrasecreta[TAMANHO_PALAVRA];
 char chutes[26];
 int chutesdados = 0;
 
@@ -109,7 +109,7 @@ void adcionapalavra() {
   scanf(" %c", &quer);
 
   if (quer == 's') {
-    char novapalavra[20];
+    char novapalavra[TAMANHO_PALAVRA];
 
     printf("digite a nova palavra, em letras maiúsculas: ");
     scanf("%s", novapalavra);

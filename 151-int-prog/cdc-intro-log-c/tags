@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+NIVEL_1	adivinhacao.c	5;"	d	file:
+NIVEL_2	adivinhacao.c	6;"	d	file:
+NIVEL_3	adivinhacao.c	7;"	d	file:
+TOTAL_PONTOS	adivinhacao.c	4;"	d	file:
+abertura	forca.c	/^void abertura() {$/;"	f
+abertura	multipicador.c	/^void abertura(int multiplicador) {$/;"	f
+adcionapalavra	forca.c	/^void adcionapalavra() {$/;"	f
+chuta	forca.c	/^void chuta() {$/;"	f
+chutes	forca.c	/^char chutes[26];$/;"	v
+chutesdados	forca.c	/^int chutesdados = 0;$/;"	v
+desenharforca	forca.c	/^void desenharforca() {$/;"	f
+enforcou	forca.c	/^int enforcou() {$/;"	f
+escolhepalavra	forca.c	/^void escolhepalavra() {$/;"	f
+ganhou	forca.c	/^int ganhou() {$/;"	f
+jachutou	forca.c	/^int jachutou(char letra) {$/;"	f
+main	adivinhacao.c	/^int main() {$/;"	f
+main	casting.c	/^int main() {$/;"	f
+main	desafio-1.c	/^int main()$/;"	f
+main	desafio-2.c	/^int main () {$/;"	f
+main	desafio-3.c	/^int main () {$/;"	f
+main	desafio-4.c	/^int main () {$/;"	f
+main	desafio-5.c	/^int main () {$/;"	f
+main	desafio-6.c	/^int main() {$/;"	f
+main	forca.c	/^int main() {$/;"	f
+main	multipicador.c	/^int main() {$/;"	f
+main	numerorandomico.c	/^int main () {$/;"	f
+palavrasecreta	forca.c	/^char palavrasecreta[20];$/;"	v
