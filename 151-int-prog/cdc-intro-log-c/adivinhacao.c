@@ -33,7 +33,7 @@ int main() {
 
   int n1 = rand();
 
-  while (continuar) {
+  do {
 
     printf("Qual o nível de dificuldade ? \n");
     printf("(1)Fácil (2)Médio (3)Difícil \n \n");
@@ -123,6 +123,6 @@ int main() {
     }
     printf("Quer continuar jogando (1)Sim (0)Não? \n");
     scanf("%d", &continuar);
-  }
+  } while (continuar) ;
   printf("Fim de jogo \n");
 }
