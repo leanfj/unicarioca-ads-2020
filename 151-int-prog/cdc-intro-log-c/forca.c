@@ -52,15 +52,18 @@ void chuta() {
   char chute;
   printf("Qual letra? \n");
   scanf(" %c", &chute);
-  
-  if(letraexiste(chute)) {
-    printf("\nVocê acertou: a palavra tem a letra %c \n\n", chute);
+  if (chute < 65 || chute > 90) {
+    printf("Use somente letras MAIÚSCULAS \n");
   } else {
-    printf("\nVocê errou: a palavra NÃO tem a letra %c\n\n", chute);
-  }
+    if (letraexiste(chute)) {
+      printf("\nVocê acertou: a palavra tem a letra %c \n\n", chute);
+    } else {
+      printf("\nVocê errou: a palavra NÃO tem a letra %c\n\n", chute);
+    }
 
-  chutes[chutesdados] = chute;
-  chutesdados++;
+    chutes[chutesdados] = chute;
+    chutesdados++;
+  }
 }
 
 int jachutou(char letra) {
@@ -99,15 +102,17 @@ int chuteserrados() {
 }
 void desenharforca() {
 
-
   int erros = chuteserrados();
 
   printf("  _______           \n");
   printf(" |/      |          \n");
-  printf(" |      %c%c%c      \n", (erros >= 1 ? '(' : ' '), (erros >= 1 ? '_' : ' '), (erros >= 1 ? ')' : ' '));
-  printf(" |      %c%c%c      \n", (erros >= 3 ? '\\' : ' '), (erros >= 2 ? '|' : ' '), (erros >= 3 ? '/' : ' '));
+  printf(" |      %c%c%c      \n", (erros >= 1 ? '(' : ' '),
+         (erros >= 1 ? '_' : ' '), (erros >= 1 ? ')' : ' '));
+  printf(" |      %c%c%c      \n", (erros >= 3 ? '\\' : ' '),
+         (erros >= 2 ? '|' : ' '), (erros >= 3 ? '/' : ' '));
   printf(" |       %c         \n", (erros >= 2 ? '|' : ' '));
-  printf(" |      %c %c       \n", (erros >= 4 ? '/' : ' '), (erros >= 4 ? '\\' : ' ') );
+  printf(" |      %c %c       \n", (erros >= 4 ? '/' : ' '),
+         (erros >= 4 ? '\\' : ' '));
   printf(" |                  \n");
   printf("_|___               \n");
   printf("\n\n");
@@ -124,7 +129,6 @@ void desenharforca() {
   }
   printf("\n");
 }
-
 
 int enforcou() { return chuteserrados() >= 5; }
 
@@ -174,7 +178,6 @@ int main() {
     desenharforca();
 
     chuta();
-
 
   } while (!ganhou() && !enforcou());
   desenharforca();
