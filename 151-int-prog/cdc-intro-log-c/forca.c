@@ -132,7 +132,7 @@ void desenharforca() {
 
 int enforcou() { return chuteserrados() >= 5; }
 
-void adcionapalavra() {
+void adicionapalavra() {
   char quer;
 
   printf("Você deseja adicionar uma paralavra no jogo (S/N) ? ");
@@ -141,6 +141,9 @@ void adcionapalavra() {
 
   if (quer == 'S') {
     char novapalavra[TAMANHO_PALAVRA];
+    char palavralida[TAMANHO_PALAVRA];
+
+    int qtd;
 
     printf("Digite a nova palavra, em letras maiúsculas: ");
     scanf("%s", novapalavra);
@@ -154,16 +157,22 @@ void adcionapalavra() {
       exit(1);
     }
 
-    int qtd;
-
     fscanf(f, "%d", &qtd);
-    qtd++;
-    fseek(f, 0, SEEK_SET);
-    fprintf(f, "%d", qtd);
 
-    fseek(f, 0, SEEK_END);
-    fprintf(f, "\n%s", novapalavra);
-
+    while (fgets(palavralida, 20, f) != NULL) {
+      int retorno;
+      retorno = strcmp(palavralida, novapalavra);
+      if (retorno == 0) {
+        printf("Palavra já está registrada no Bando de dados, digite uma "
+               "palavra nova. \n");
+      } else {
+        qtd++;
+        fseek(f, 0, SEEK_SET);
+        fprintf(f, "%d", qtd);
+        fseek(f, 0, SEEK_END);
+        fprintf(f, "\n%s", novapalavra);
+      }
+    }
     fclose(f);
   }
 }
@@ -187,6 +196,6 @@ int main() {
   } else {
     printf("Você perdeu. Tente Novamente \n\n");
   }
-  adcionapalavra();
+  adicionapalavra();
   return 0;
 }
