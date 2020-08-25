@@ -13,7 +13,10 @@ int potencia(int base, int expoente) {
 }
 
 int main() {
-  printf("Potencia de %d elvado a %d é %d", 3, 0, potencia(3, 0));
+  int base, pot;
+  base = 2;
+  pot = 1;
+  printf("Potência de %d elevado a %d é %d", base, pot , potencia(base, pot));
   return 0;
 
 }
