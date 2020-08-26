@@ -1,31 +1,19 @@
 #include <stdio.h>
-int g (int a , int b)
 
-{
+int g(int a, int b) {
 
-int retorno;
+  int retorno;
+  while (a > 0 && b > 0) {
+    if (a > b) {
+      a = a - b;
+    } else {
+      b = b - a;
+    }
+  }
 
-while (a>0 && b>0)
+  retorno = a + b;
 
-{
-
-if (a>b)
-
-a=a-b;
-
-else
-
-b=b-a;
-
+  return retorno;
 }
 
-retorno=a+b;
-
-return retorno;
-
-}
-
-int main () {
-
-printf("%d", g(18, 12));
-}
+int main() { printf("%d", g(18, 12)); }
