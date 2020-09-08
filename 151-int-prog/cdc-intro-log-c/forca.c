@@ -132,6 +132,28 @@ void desenharforca() {
 
 int enforcou() { return chuteserrados() >= 5; }
 
+int verificarpalavras(char palavra[TAMANHO_PALAVRA]) {
+  char palavralida[TAMANHO_PALAVRA];
+  int resposta = 0;
+  FILE *ponteiro_arquivo;
+  ponteiro_arquivo = fopen("palavras.txt", "r");
+
+  if (ponteiro_arquivo == 0) {
+    printf("Banco de dados de palavras não está disponível \n\n");
+    exit(1);
+  }
+
+  while (fgets(palavralida, 20, ponteiro_arquivo) != NULL) {
+    printf("%d \n", strcmp(palavralida, palavra));
+    if (strcmp(palavralida, palavra) == 0) {
+      resposta = 1;
+    }
+  }
+  printf("%d \n", resposta);
+  fclose(ponteiro_arquivo);
+  return resposta;
+}
+
 void adicionapalavra() {
   char quer;
 
@@ -141,39 +163,38 @@ void adicionapalavra() {
 
   if (quer == 'S') {
     char novapalavra[TAMANHO_PALAVRA];
-    char palavralida[TAMANHO_PALAVRA];
 
     int qtd;
 
     printf("Digite a nova palavra, em letras maiúsculas: ");
     scanf("%s", novapalavra);
 
-    FILE *f;
+    FILE *ponteiro_arquivo;
 
-    f = fopen("palavras.txt", "r+");
+    ponteiro_arquivo = fopen("palavras.txt", "r+");
 
-    if (f == 0) {
+    if (ponteiro_arquivo == 0) {
       printf("Banco de dados de palavras não está disponível \n\n");
       exit(1);
     }
 
-    fscanf(f, "%d", &qtd);
+    fscanf(ponteiro_arquivo, "%d", &qtd);
 
-    while (fgets(palavralida, 20, f) != NULL) {
-      int retorno;
-      retorno = strcmp(palavralida, novapalavra);
-      if (retorno == 0) {
-        printf("Palavra já está registrada no Bando de dados, digite uma "
-               "palavra nova. \n");
-      } else {
-        qtd++;
-        fseek(f, 0, SEEK_SET);
-        fprintf(f, "%d", qtd);
-        fseek(f, 0, SEEK_END);
-        fprintf(f, "\n%s", novapalavra);
-      }
+    while (verificarpalavras(novapalavra)) {
+      printf("Palavra já está registrada no Bando de dados, digite uma "
+             "palavra nova. \n");
+      printf("Digite a nova palavra, em letras maiúsculas: ");
+      scanf("%s", novapalavra);
     }
-    fclose(f);
+
+    qtd++;
+    fseek(ponteiro_arquivo, 0, SEEK_SET);
+    fprintf(ponteiro_arquivo, "%d", qtd);
+
+    fseek(ponteiro_arquivo, 0, SEEK_END);
+    fprintf(ponteiro_arquivo, "\n%s", novapalavra);
+    
+    fclose(ponteiro_arquivo);
   }
 }
 
