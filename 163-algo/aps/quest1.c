@@ -1,3 +1,17 @@
+/*
+ *
+ * APS - Turma 163 - Algoritmos II
+ * Resolução questão 1 da APS
+ *
+ * Grupo
+ *
+ * Leandro Ferreira de Jesus - Mat.: 2020101253
+ * Marco André Pinto Molina - Mat.: 2015101131
+ * Luciano Queiroz Macedo - Mat.: 2019200224
+ * Alvaro Vargas Neto - Mat.: 2017200808
+ *
+ */
+
 #include <stdio.h>
 
 
