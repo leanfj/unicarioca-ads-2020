@@ -1,3 +1,10 @@
+/*Questão 1 (2,0 pontos)
+ *
+ * Faça um programa que peça para o usuário fornecer os valores inteiros de 2 matrizes M e N ,
+ * ambas com 3 linhas 4 colunas e que imprima na tela a matriz O= 3*M-5*N
+ *
+ */
+
 #include <stdio.h>
 #define LINHA 3
 #define COLUNA 4
