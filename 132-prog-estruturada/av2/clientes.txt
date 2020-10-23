@@ -1,0 +1,10 @@
+CLIENTE: 0 --- Nome: Leandro Ferreira - Endereço: Rua do Leandro 35 - Idade: 35 - Telefone: 2199998888 
+CLIENTE: 1 --- Nome: Dayana Brandao - Endereço: Rua da Dayana 32 - Idade: 32 - Telefone: 2133334444 
+CLIENTE: 2 --- Nome: Antonio Pedro - Endereço: Rua do Antonio 7 - Idade: 7 - Telefone: 2144444444 
+CLIENTE: 3 --- Nome: Lucas Bento - Endereço: Rua do Lucas 5 - Idade: 5 - Telefone: 2155555555 
+CLIENTE: 4 --- Nome: Thomas Turbano - Endereço: Rua do Thomas 22 - Idade: 22 - Telefone: 2166666666 
+CLIENTE: 5 --- Nome: Paula Tejano - Endereço: Rua da Paula 44 - Idade: 44 - Telefone: 2188888888 
+CLIENTE: 6 --- Nome: Seti Nakombi - Endereço: Rua do Seti 7 - Idade: 55 - Telefone: 2177777777 
+CLIENTE: 7 --- Nome: To Sem Saco - Endereço: Rua do Sem Saco 66 - Idade: 66 - Telefone: 2199999999 
+CLIENTE: 8 --- Nome: Plinio Andrade - Endereço: Rua do Plinio 89 - Idade: 76 - Telefone: 2122222222 
+CLIENTE: 9 --- Nome: Isso Nao Acaba - Endereço: Rua do Fim 888 - Idade: 33 - Telefone: 2344444444 
