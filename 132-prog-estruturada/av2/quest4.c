@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define CLIENTES 10
 
 /* Função utilizada para limpa o buffer que o scanf carrega*/
 void flush_in() {
@@ -15,6 +16,7 @@ void flush_in() {
   }
 }
 
+/*Função para limpar o \n (enter) que o fgets coloca por padrão no final de cada entrada*/
 char *lerStringSeguramente(char *string, int tamanho) {
   if (fgets(string, tamanho, stdin) != NULL) {
     /* Remove a nova linha (\n), caso ela tenha sido lida pelo fgets */
@@ -37,43 +39,49 @@ struct lista_clientes {
 
 int main() {
   struct lista_clientes clientes[100];
+  int contadorCliente, contadorEscritaArquivo;
 
-  for (int i = 0; i < 10; i++) {
-    printf("Informe o nome do cliente %d \n", i + 1);
-    lerStringSeguramente(clientes[i].nome, sizeof(clientes[i].nome));
-    printf("Informe o endereço do cliente %d \n", i + 1);
-    lerStringSeguramente(clientes[i].endereco, sizeof(clientes[i].endereco));
-    printf("Informe a idade do cliente %d \n", i + 1);
-    scanf("%d", &clientes[i].idade);
+  /*Leitura de informações do cliente*/
+  for (contadorCliente = 0; contadorCliente < CLIENTES; contadorCliente++) {
+    printf("Informe o nome do cliente %d \n", contadorCliente + 1);
+    lerStringSeguramente(clientes[contadorCliente].nome, sizeof(clientes[contadorCliente].nome));
+    printf("Informe o endereço do cliente %d \n", contadorCliente + 1);
+    lerStringSeguramente(clientes[contadorCliente].endereco, sizeof(clientes[contadorCliente].endereco));
+    printf("Informe a idade do cliente %d \n", contadorCliente + 1);
+    scanf("%d", &clientes[contadorCliente].idade);
     flush_in();
-    printf("Informe o telefone do cliente %d \n", i + 1);
-    lerStringSeguramente(clientes[i].telefone, sizeof(clientes[i].telefone));
+    printf("Informe o telefone do cliente %d \n", contadorCliente + 1);
+    lerStringSeguramente(clientes[contadorCliente].telefone, sizeof(clientes[contadorCliente].telefone));
   }
 
-  FILE *ponteiro_arquivo;
+  /*Manipulando arquivo*/
+  FILE *ponteiroArquivo;
 
-  ponteiro_arquivo = fopen("clientes.txt", "w");
-
-  if (ponteiro_arquivo == 0) {
-    printf("Lista de cliente não disponível \n\n");
+  ponteiroArquivo = fopen("clientes.txt", "w");
+  
+  /*Verifica a disponibilidade de acesso ao arquivo*/
+  if (ponteiroArquivo == 0) {
+    printf("ERROR - Lista de clientes não disponível !!! \n\n");
     exit(1);
   }
-
-  for (int i = 0; i < 10; i++) {
-    fseek(ponteiro_arquivo, 0, SEEK_END);
+  
+  /*Laço para escrever cada cliente no arquivo*/
+  for (contadorEscritaArquivo = 0; contadorEscritaArquivo < CLIENTES; contadorEscritaArquivo++) {
     fprintf(
-        ponteiro_arquivo,
+        ponteiroArquivo,
         "CLIENTE: %d --- Nome: %s - Endereço: %s - Idade: %d - Telefone: %s \n",
-        i+1,
-        clientes[i].nome,
-        clientes[i].endereco,
-        clientes[i].idade,
-        clientes[i].telefone);
+        contadorEscritaArquivo+1,
+        clientes[contadorEscritaArquivo].nome,
+        clientes[contadorEscritaArquivo].endereco,
+        clientes[contadorEscritaArquivo].idade,
+        clientes[contadorEscritaArquivo].telefone);
   }
-  printf("Dados cadastrados em arquivo \n");
-  fclose(ponteiro_arquivo);
 
-  /*for (int i = 0; i < 2; i++) {*/
+  printf("SUCCESS - Dados cadastrados em arquivo !!!! \n");
+  
+  fclose(ponteiroArquivo);
+
+  /*for (int i = 0; i < CLIENTES; i++) {*/
   /*printf("-----CLIENTE %d ----- \n", i + 1);*/
   /*printf("NOME: %s \n", clientes[i].nome);*/
   /*printf("ENDEREÇO: %s \n", clientes[i].endereco);*/
