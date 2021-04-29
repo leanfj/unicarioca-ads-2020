@@ -1,4 +1,4 @@
-# Curso Graduação Tecnológica de Análise e desenvolvimento de sistemas
+# Curso Graduação Tecnológica de Análise e Desenvolvimento de Sistemas
 
-Repositório de conteudo de estudos durante a minha graduação.
+Repositório de conteúdo de estudos durante a minha graduação.
 
